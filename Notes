@@ -1,0 +1,61 @@
+hoisting : it is behavior, where variables & function are hoisted or moved on top of containing scope during compilation phase 
+this means u can use variables & function before declaration 
+var : log(a)
+var a=10 
+..hoisted & initialized undefined 
+let : 
+log(a)
+let a=10 
+..hoisted & initialized Refrence Error 
+
+for function
+..hoisted & give value 
+
+
+State :
+Way to store & manage data that can change over time & affect how the component render 
+we can define state using usestate hook , which allows to set an initial value & provide a way to set value 
+
+Hooks : 
+hook are introduced in react 16.8
+they let u use the state & other react feature without writing a class
+
+useState Hook : 
+Allows u to manage/track state in functional component
+state generally refers to data or properties that need to be tracked in application 
+return array => const count=useState(0)
+                console.log(count)...[0,f]
+therfore array destructring is done ....const [count , setCount] = useState()...{count}..directly gives value of count
+in above example ...if we coutn+1...count will change but not rerender ,ui will not change,
+therefor setCount/setState is used which on change the state rerender the ui
+  
+
+useEffect : 
+Allows u to perform side Effect in ur component , Some Eg : fetching ur data , directly updating the dom
+
+ 1. using useEffect without dependency : will call on every single render   
+ 2. can not use useEffect inside conditonal statement 
+
+
+ ContextApi :
+  feature that allows u to manage & share data across components tree without passing props manually at every level
+  it is useful for scenarios where u need to share data or function across many components which are deepli nested 
+  ..not a way to pass a data but better then prop drilling
+
+  const data = createContext()
+  const name ="Abhi"
+  Data.provider value={name} // passing data
+  Data.Consume (name)=>{return <h1>name</h1>} // consuming data
+
+
+  useContext() :
+allows us to access the context value provided by context Object directly within functional Component 
+context provide to pass daata to component tree without passing props manually to every level
+
+useReducer Hook :
+Similar as usesatate hook but it is designed for more comploex state object or state Transition that use/involves more sub values ,it allows u to manage state in functional & immutable way 
+const[state , dispatch] = useReducer( reducer , initialState )
+
+
+useRef hook :
+it provides a way to access & interact with Dom elements or to persist value across render without causing re-render 
